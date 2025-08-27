@@ -80,6 +80,7 @@ class CNN(nn.Module):
       fc1 -> relu -> dropout
       fc2 -> output
     """
+    
     x = self.pool(self.relu(self.conv1(x))) # First Convolution Block
     x = self.pool(self.relu(self.conv2(x))) # Second Convolution Block
     x = x.view(-1, 64*8*8) # Flatten
